@@ -22,6 +22,6 @@ Uncertainty is reported for unreadable, ambiguous, or inconsistent material. Aut
 
 ## Implementation in This Repository
 
-This repository implements a declarative OpenGAP worker through `agent.yaml`, `SOUL.md`, this document, and `README.md`. The manifest defines the rental-document evidence accepted and the completeness or inconsistency report returned, while the policy documents prohibit applicant scoring or autonomous housing decisions.
+`agent.py` implements `review_documents(package)`. It compares the supplied document map with either caller-provided requirements or `DEFAULT_REQUIRED`, separates missing from unreadable material, retains presence evidence for every requirement, returns only a completeness status, never makes an eligibility decision, and requires authorized review. `test_agent.py` verifies that missing documents cannot produce an eligibility decision.
 
-No document-authentication service, tenant-screening database, or approval endpoint exists in the repository. A compatible host must preserve uncertainty and route all findings to authorized human review.
+No authentication service, tenant-screening database, or approval endpoint exists. All findings route to authorized human review.
