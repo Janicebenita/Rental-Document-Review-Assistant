@@ -19,3 +19,9 @@ A limitation is that the agent cannot authenticate documents or determine legal 
 ## Uncertainty and Human Review
 
 Uncertainty is reported for unreadable, ambiguous, or inconsistent material. Authorized human review is mandatory for all housing decisions.
+
+## Implementation in This Repository
+
+This repository implements a declarative OpenGAP worker through `agent.yaml`, `SOUL.md`, this document, and `README.md`. The manifest defines the rental-document evidence accepted and the completeness or inconsistency report returned, while the policy documents prohibit applicant scoring or autonomous housing decisions.
+
+No document-authentication service, tenant-screening database, or approval endpoint exists in the repository. A compatible host must preserve uncertainty and route all findings to authorized human review.
